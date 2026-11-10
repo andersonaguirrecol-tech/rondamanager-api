@@ -1,5 +1,7 @@
 # RondaManager API
 
+API publicada: https://rondamanager-api.onrender.com
+
 API REST del proyecto RondaManager, desarrollada con Node.js, Express y PostgreSQL.
 Evidencia GA4-220501096-AA1-EV01 (Programación de Software, SENA).
 Aprendiz: Anderson Arcesio Aguirre Angulo, Ficha 3466395.

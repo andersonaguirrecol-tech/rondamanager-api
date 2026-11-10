@@ -8,6 +8,84 @@
   },
   "item": [
     {
+      "name": "Pruebas en la nube",
+      "item": [
+        {
+          "name": "Nube - Salud",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://rondamanager-api.onrender.com/api/salud",
+              "protocol": "https",
+              "host": [
+                "rondamanager-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "salud"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Nube - Login",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"correo\": \"anderson@rondamanager.com\",\r\n  \"password\": \"123456\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "https://rondamanager-api.onrender.com/api/auth/login",
+              "protocol": "https",
+              "host": [
+                "rondamanager-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "auth",
+                "login"
+              ]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "Nube - Servicios",
+          "request": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "https://rondamanager-api.onrender.com/api/servicios",
+              "protocol": "https",
+              "host": [
+                "rondamanager-api",
+                "onrender",
+                "com"
+              ],
+              "path": [
+                "api",
+                "servicios"
+              ]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
       "name": "Usuarios - Eliminar",
       "event": [
         {
@@ -424,7 +502,7 @@
       "response": []
     },
     {
-      "name": "Servicios - Crear",
+      "name": "Servicios - Crear para prueba eliminar",
       "event": [
         {
           "listen": "test",
