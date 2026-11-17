@@ -1,0 +1,142 @@
+:root {
+  --azul: #1F3A5F;
+  --azul-claro: #E6ECF5;
+  --verde: #1B6E3A;
+  --verde-fondo: #DDF6E3;
+  --ambar: #8A4B00;
+  --ambar-fondo: #FEF3C7;
+  --rojo: #B3261D;
+  --rojo-fondo: #FDE2E0;
+  --fondo: #F4F6FA;
+  --texto: #1B1F27;
+  --borde: #C9D1DE;
+}
+
+* { box-sizing: border-box; }
+[hidden] { display: none !important; }
+
+body {
+  margin: 0;
+  font-family: 'Roboto', Arial, sans-serif;
+  font-size: 16px;
+  color: var(--texto);
+  background: var(--fondo);
+}
+
+:focus-visible { outline: 3px solid #F9A825; outline-offset: 2px; }
+
+h1, h2 { margin: 0; color: var(--azul); }
+
+/* Botones */
+.boton {
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid transparent;
+  border-radius: 12px;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+.boton.pequeno { min-height: 40px; padding: 0 14px; }
+.boton.ancho { width: 100%; }
+.boton.primario { background: var(--azul); color: #fff; }
+.boton.secundario { background: #fff; color: var(--azul); border-color: var(--azul); }
+.boton.peligro { background: var(--rojo); color: #fff; }
+.boton:disabled { opacity: .6; cursor: not-allowed; }
+
+/* Inicio de sesión */
+.vista-login { min-height: 100vh; display: grid; place-items: center; padding: 16px; }
+.tarjeta-login {
+  width: min(420px, 100%);
+  background: #fff;
+  padding: 32px 24px;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(31, 58, 95, .15);
+}
+.subtitulo { color: #4A5568; margin: 8px 0 24px; }
+
+/* Encabezado y navegación */
+.encabezado {
+  background: var(--azul);
+  color: #fff;
+  padding: 12px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: space-between;
+  align-items: center;
+}
+.marca { display: flex; flex-direction: column; }
+.marca span { font-size: 14px; opacity: .85; }
+.sesion-info { display: flex; align-items: center; gap: 12px; font-size: 14px; flex-wrap: wrap; }
+.navegacion { display: flex; gap: 8px; padding: 12px 20px 0; max-width: 1000px; margin: 0 auto; flex-wrap: wrap; }
+.navegacion button {
+  min-height: 48px;
+  padding: 0 20px;
+  border: 1px solid var(--borde);
+  border-radius: 12px 12px 0 0;
+  background: #fff;
+  color: var(--azul);
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+.navegacion button[aria-current="page"] { background: var(--azul); color: #fff; border-color: var(--azul); }
+
+/* Contenido */
+.contenido {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 0 12px 12px 12px;
+  min-height: 300px;
+}
+.cabecera-modulo { display: flex; justify-content: space-between; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 16px; }
+.tabla-contenedor { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; }
+th, td { padding: 12px; text-align: left; border-bottom: 1px solid var(--borde); vertical-align: middle; }
+th { background: var(--azul-claro); color: var(--azul); font-weight: 700; }
+.acciones-fila { white-space: nowrap; display: flex; gap: 8px; }
+.vacio { padding: 24px; text-align: center; color: #4A5568; }
+
+/* Etiquetas de estado (icono + texto) */
+.etiqueta { display: inline-block; padding: 4px 10px; border-radius: 999px; font-size: 14px; font-weight: 500; }
+.etiqueta.ok { background: var(--verde-fondo); color: var(--verde); }
+.etiqueta.inactivo { background: var(--ambar-fondo); color: var(--ambar); }
+
+/* Formularios */
+.campo { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+.campo label { font-weight: 500; }
+.campo small { color: #4A5568; }
+.campo input, .campo select, .campo textarea {
+  min-height: 48px;
+  padding: 10px 12px;
+  border: 1px solid var(--borde);
+  border-radius: 10px;
+  font: inherit;
+}
+.campo-check label { display: flex; align-items: center; gap: 10px; min-height: 48px; }
+.campo-check input { width: 22px; height: 22px; min-height: 0; }
+.error { background: var(--rojo-fondo); color: var(--rojo); padding: 10px 12px; border-radius: 10px; margin: 0 0 16px; }
+
+/* Ventana de formulario */
+dialog { border: none; border-radius: 16px; padding: 24px; width: min(480px, 92vw); }
+dialog::backdrop { background: rgba(0, 0, 0, .45); }
+dialog h2 { margin-bottom: 16px; }
+.acciones { display: flex; justify-content: flex-end; gap: 12px; }
+
+/* Mensajes */
+.mensaje {
+  position: fixed;
+  top: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 10;
+  padding: 12px 20px;
+  border-radius: 12px;
+  font-weight: 500;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+}
+.mensaje.exito { background: var(--verde-fondo); color: var(--verde); }
+.mensaje.error { background: var(--rojo-fondo); color: var(--rojo); }

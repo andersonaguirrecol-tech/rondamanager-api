@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>RondaManager</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <div id="mensaje" class="mensaje" role="status" aria-live="polite" hidden></div>
+
+  <section id="vistaLogin" class="vista-login" hidden>
+    <div class="tarjeta-login">
+      <h1>RondaManager</h1>
+      <p class="subtitulo">Gestión inteligente de rondas para seguridad privada</p>
+      <form id="formLogin">
+        <div class="campo">
+          <label for="loginCorreo">Correo</label>
+          <input type="email" id="loginCorreo" required autocomplete="username">
+        </div>
+        <div class="campo">
+          <label for="loginPassword">Contraseña</label>
+          <input type="password" id="loginPassword" required autocomplete="current-password">
+        </div>
+        <p id="errorLogin" class="error" role="alert" hidden></p>
+        <button type="submit" id="botonLogin" class="boton primario ancho">Iniciar sesión</button>
+      </form>
+    </div>
+  </section>
+
+  <section id="vistaApp" hidden>
+    <header class="encabezado">
+      <div class="marca">
+        <strong>RondaManager</strong>
+        <span>Panel de administración</span>
+      </div>
+      <div class="sesion-info">
+        <span id="datosUsuario"></span>
+        <button type="button" id="botonSalir" class="boton secundario pequeno">Cerrar sesión</button>
+      </div>
+    </header>
+    <nav id="navegacion" class="navegacion" aria-label="Módulos">
+      <button type="button" data-modulo="usuarios">Usuarios</button>
+      <button type="button" data-modulo="servicios">Servicios</button>
+      <button type="button" data-modulo="productos">Productos</button>
+    </nav>
+    <main id="contenido" class="contenido"></main>
+  </section>
+
+  <dialog id="dialogo" aria-labelledby="dialogoTitulo">
+    <form id="formularioDialogo">
+      <h2 id="dialogoTitulo"></h2>
+      <div id="camposFormulario"></div>
+      <p id="errorFormulario" class="error" role="alert" hidden></p>
+      <div class="acciones">
+        <button type="button" id="cancelarDialogo" class="boton secundario">Cancelar</button>
+        <button type="submit" class="boton primario">Guardar</button>
+      </div>
+    </form>
+  </dialog>
+
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>

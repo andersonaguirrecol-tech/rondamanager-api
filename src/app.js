@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 const db = require('./config/db');
 
 class App {
@@ -14,6 +15,7 @@ class App {
   middlewares() {
     this.app.use(cors());
     this.app.use(express.json());
+    this.app.use(express.static(path.join(__dirname, '..', 'public')));
   }
 
   rutas() {
