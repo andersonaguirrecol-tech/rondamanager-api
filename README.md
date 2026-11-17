@@ -43,3 +43,20 @@ Los endpoints protegidos se llaman con el encabezado `Authorization: Bearer <tok
 
 ## Pruebas
 En la carpeta `postman` está la colección exportada con todas las pruebas realizadas.
+## Aplicación web (GA4-220501096-AA1-EV02)
+
+Aplicación publicada: https://rondamanager-api.onrender.com
+
+Panel web de RondaManager hecho con HTML, CSS y JavaScript con clases (módulos ES), servido por el mismo servidor Express desde la carpeta `public`. Consume la API REST con `fetch` y formato JSON, y usa el token JWT del módulo de autenticación.
+
+Módulos: inicio de sesión, usuarios (solo administrador), servicios y productos, cada uno con crear, consultar, editar y eliminar.
+
+Estructura de `public/`:
+- `index.html` y `css/estilos.css`
+- `js/App.js`: clase principal (sesión, navegación y mensajes)
+- `js/Sesion.js`: guarda y lee el token
+- `js/ApiClient.js`: única clase que se comunica con la API
+- `js/ModuloCrud.js`: clase base con tabla, formulario y las operaciones GET, POST, PUT y DELETE
+- `js/UsuariosModulo.js`, `js/ServiciosModulo.js` y `js/ProductosModulo.js`: clases que heredan de `ModuloCrud`
+
+Para ejecutarla en un computador: `npm install`, `npm start` y abrir http://localhost:3000.
